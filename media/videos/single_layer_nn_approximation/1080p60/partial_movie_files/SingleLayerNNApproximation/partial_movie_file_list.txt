@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1074309219_2230675760_1115645894.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_1576368880_2713756325.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_2230675760_2130239769.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_2272358862_241221481.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_2230675760_3847984954.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_3643221624_4103154138.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_2230675760_3479437000.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_11293217_648029599.mp4'
+file 'file:/home/orincon/my-manim/media/videos/single_layer_nn_approximation/1080p60/partial_movie_files/SingleLayerNNApproximation/1766331209_2230675760_2823995414.mp4'

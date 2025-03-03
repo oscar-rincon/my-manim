@@ -72,4 +72,14 @@ class SingleLayerNNApproximation(Scene):
             color=RED).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
-  
+
+if __name__ == "__main__":
+    config.output_file = "output/single_layer_nn_approximation.mp4"
+    config.frame_rate = 30
+    config.pixel_height = 1080
+    config.pixel_width = 1920
+    config.save_last_frame = True
+    config.save_pngs = True
+    config.pngs_folder = "output/pngs"
+    scene = SingleLayerNNApproximation()
+    scene.render()
