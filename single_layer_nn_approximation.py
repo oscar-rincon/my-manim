@@ -1,4 +1,5 @@
 from manim import *
+import numpy as np
 
 class SingleLayerNNApproximation(Scene):
     def construct(self):
@@ -23,11 +24,11 @@ class SingleLayerNNApproximation(Scene):
         f = axes.plot(lambda x: np.exp(x) + np.sin(5*x), color=BLUE)
 
         # Funciones de aproximación (ejemplo)
-        approx_f_1 = axes.plot(lambda x: 0.4630 * np.atan(57.3259 * x + -1.9612) + 1.2033, color=RED)
-        approx_f_2 = axes.plot(lambda x: 39.5405 * np.atan(2.2982 * x + 0.1134) + 41.3316 * np.atan(-2.0346 * x + -0.1264) + 1.7708, color=RED)
-        approx_f_3 = axes.plot(lambda x: -244.9229 * np.atan(-0.4151 * x + 0.2063) + -444.7161 * np.atan(-1.0822 * x + 0.0822) + 610.0167 * np.atan(-0.9411 * x + 0.0909) + 31.9190, color=RED)
-        approx_f_4 = axes.plot(lambda x: 2.1930 * np.atan(-3.6508 * x + -2.0453) + -6.4635 * np.atan(-1.8571 * x + 0.1619) + 5.4553 * np.atan(-2.0688 * x + 1.1278) + 4.6033 * np.atan(3.8904 * x + -5.0540) + 6.2000, color=RED)
-        approx_f_5 = axes.plot(lambda x: 0.0360 * np.atan(-38.2202 * x + 29.2498) + -25.9117 * np.atan(1.4345 * x + 0.8985) + -34.5235 * np.atan(-0.9677 * x + 0.3201) + -34.7587 * np.atan(-0.6725 * x + -0.6112) + 22.3801 * np.atan(-1.6601 * x + 0.8868) + -4.7047, color=RED)
+        approx_f_1 = axes.plot(lambda x: 0.4451 * np.atan(64.3133 * x + -2.5594) + 1.2437, color=RED)
+        approx_f_2 = axes.plot(lambda x: 34.2915 * np.atan(-2.5181 * x + -0.2240) + 33.4087 * np.atan(2.7962 * x + 0.2092) + 1.7555, color=RED)
+        approx_f_3 = axes.plot(lambda x: -19.1674 * np.atan(-2.5665 * x + -0.2488) + -0.3680 * np.atan(-17.8906 * x + -18.3226) + -20.6059 * np.atan(2.0819 * x + 0.2856) + 1.6079, color=RED)
+        approx_f_4 = axes.plot(lambda x: 24.0804 * np.atan(-1.4839 * x + -0.8128) + -93.8521 * np.atan(0.9048 * x + -0.4774) + -170.3697 * np.atan(-0.3467 * x + 0.6858) + -55.6373 * np.atan(-1.0170 * x + 0.0378) + 80.1597, color=RED)
+        approx_f_5 = axes.plot(lambda x: 3.6031 * np.atan(3.2432 * x + -4.1398) + -2.6883 * np.atan(2.8064 * x + -1.7066) + -3.3040 * np.atan(2.5876 * x + 1.5902) + 3.7498 * np.atan(2.4878 * x + 0.0076) + -2.7125 * np.atan(-3.3972 * x + -4.3498) + 2.6676, color=RED)
 
         # Agregar etiquetas a los ejes
         labels = axes.get_axis_labels(x_label="x", y_label=r"f = \exp(x) + \sin(5x)").set_color(BLACK)
@@ -41,7 +42,7 @@ class SingleLayerNNApproximation(Scene):
         # Ecuación de la red neuronal de una sola capa en color rojo
         equation = MathTex(
             r"\hat{f}(x) = \sum_{i=1}^{1} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
-            color=RED
+            color=RED, font_size=40
         ).to_edge(UP).shift(UP * 0.5)
 
         plot = VGroup(axes, f, approx_f_1, x_labels, y_labels, equation)
@@ -54,22 +55,22 @@ class SingleLayerNNApproximation(Scene):
         # Transiciones de approx_f_1 a approx_f_2, approx_f_3, approx_f_4 y approx_f_5
         self.play(Transform(approx_f_1, approx_f_2), equation.animate.become(MathTex(
             r"\hat{f}(x) = \sum_{i=1}^{2} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
-            color=RED).to_edge(UP).shift(UP * 0.5)))
+            color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
         self.play(Transform(approx_f_1, approx_f_3), equation.animate.become(MathTex(
             r"\hat{f}(x) = \sum_{i=1}^{3} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
-            color=RED).to_edge(UP).shift(UP * 0.5)))
+            color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
         self.play(Transform(approx_f_1, approx_f_4), equation.animate.become(MathTex(
             r"\hat{f}(x) = \sum_{i=1}^{4} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
-            color=RED).to_edge(UP).shift(UP * 0.5)))
+            color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
         self.play(Transform(approx_f_1, approx_f_5), equation.animate.become(MathTex(
             r"\hat{f}(x) = \sum_{i=1}^{5} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
-            color=RED).to_edge(UP).shift(UP * 0.5)))
+            color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
 
