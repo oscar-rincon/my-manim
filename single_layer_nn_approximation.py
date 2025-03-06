@@ -40,8 +40,8 @@ class SingleLayerNNApproximation(Scene):
         y_labels = axes.get_y_axis().add_labels({val: str(val) for val in y_values}).set_color(BLACK)
 
         # Ecuación de la red neuronal de una sola capa en color rojo
-        equation = MathTex(
-            r"\hat{f}(x) = \sum_{i=1}^{1} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
+        equation = Text(
+            r"1 Neurona",
             color=RED, font_size=40
         ).to_edge(UP).shift(UP * 0.5)
 
@@ -53,34 +53,25 @@ class SingleLayerNNApproximation(Scene):
     
 
         # Transiciones de approx_f_1 a approx_f_2, approx_f_3, approx_f_4 y approx_f_5
-        self.play(Transform(approx_f_1, approx_f_2), equation.animate.become(MathTex(
-            r"\hat{f}(x) = \sum_{i=1}^{2} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
+        self.play(Transform(approx_f_1, approx_f_2), equation.animate.become(Text(
+            r"2 Neuronas",
             color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
-        self.play(Transform(approx_f_1, approx_f_3), equation.animate.become(MathTex(
-            r"\hat{f}(x) = \sum_{i=1}^{3} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
+        self.play(Transform(approx_f_1, approx_f_3), equation.animate.become(Text(
+            r"3 Neuronas",
             color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
-        self.play(Transform(approx_f_1, approx_f_4), equation.animate.become(MathTex(
-            r"\hat{f}(x) = \sum_{i=1}^{4} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
+        self.play(Transform(approx_f_1, approx_f_4), equation.animate.become(Text(
+            r"4 Neuronas",
             color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
         self.wait(2)  # Esperar 2 segundos después de la transición
 
-        self.play(Transform(approx_f_1, approx_f_5), equation.animate.become(MathTex(
-            r"\hat{f}(x) = \sum_{i=1}^{5} w^{(2)}_i \cdot \tan^{-1} \left( w^{(1)}_i x + b^{(1)}_i \right) + b^{(2)}",
+        self.play(Transform(approx_f_1, approx_f_5), equation.animate.become(Text(
+            r"5 Neuronas",
             color=RED, font_size=40).to_edge(UP).shift(UP * 0.5)))
-        self.wait(2)  # Esperar 2 segundos después de la transición
+        self.wait(4)  # Esperar 2 segundos después de la transición
 
 
-if __name__ == "__main__":
-    config.output_file = "output/single_layer_nn_approximation.mp4"
-    config.frame_rate = 30
-    config.pixel_height = 1080
-    config.pixel_width = 1920
-    config.save_last_frame = True
-    config.save_pngs = True
-    config.pngs_folder = "output/pngs"
-    scene = SingleLayerNNApproximation()
-    scene.render()
+ 
